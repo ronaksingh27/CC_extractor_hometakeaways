@@ -125,3 +125,92 @@ Stacktrace:
 2025-02-16 02:30:46,043 - Login successful.
 2025-02-16 02:30:46,045 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305824270/
 2025-02-16 02:30:47,353 - Successfully RSVP’d to event 305824270
+2025-02-16 02:36:34,360 - Login successful.
+2025-02-16 02:36:34,363 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305939343/
+2025-02-16 02:36:39,165 - Successfully RSVP’d to event 305939343
+2025-02-16 02:38:02,403 - Login successful.
+2025-02-16 02:38:02,413 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305939343/
+2025-02-16 02:38:26,207 - Successfully RSVP’d to event 305939343
+2025-02-16 02:41:21,491 - Login successful.
+2025-02-16 02:41:21,492 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305939343/
+2025-02-16 02:41:24,086 - Successfully RSVP’d to event 305939343
+2025-02-16 02:43:13,880 - Login successful.
+2025-02-16 02:43:13,882 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305939343/
+2025-02-16 02:43:19,273 - Successfully RSVP’d to event 305939343
+2025-02-16 02:48:43,252 - Login successful.
+2025-02-16 02:48:43,256 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305939343/
+2025-02-16 02:48:51,685 - Successfully RSVP’d to event 305939343
+2025-02-16 02:50:42,814 - Login successful.
+2025-02-16 02:50:42,819 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305939343/
+2025-02-16 02:50:47,137 - Successfully RSVP’d to event 305939343
+2025-02-16 02:51:19,694 - Login successful.
+2025-02-16 02:51:19,695 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305939343/
+2025-02-16 02:51:31,360 - Successfully RSVP’d to event 305939343
+2025-02-16 02:53:39,320 - Login successful.
+2025-02-16 02:53:39,340 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305939343/
+2025-02-16 02:54:14,244 - Successfully RSVP’d to event 305939343
+2025-02-16 02:57:45,535 - Login successful.
+2025-02-16 02:57:45,536 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305939343/
+2025-02-16 02:57:56,218 - RSVP failed for event 305939343
+2025-02-16 02:59:37,667 - Login successful.
+2025-02-16 02:59:37,674 - Attempting RSVP for event: https://www.meetup.com/mumbai-weekend-events/events/305939343/
+2025-02-16 02:59:44,668 - RSVP failed for event 305939343
+2025-02-16 03:02:25,016 - Login successful.
+2025-02-16 03:02:25,020 - Attempting RSVP for event: https://www.meetup.com/mumbai-weekend-events/events/305939343/
+2025-02-16 03:02:39,353 - RSVP failed for event 305939343
+2025-02-16 03:06:14,053 - Login successful.
+2025-02-16 03:06:14,055 - Attempting RSVP for event: https://www.meetup.com/mumbai-weekend-events/events/305939343/
+2025-02-16 03:06:25,298 - RSVP failed for event 305939343
+2025-02-16 03:08:05,640 - Login successful.
+2025-02-16 03:08:05,646 - Attempting RSVP for event: https://www.meetup.com/mumbai-weekend-events/events/305939343/
+2025-02-16 03:08:34,805 - RSVP failed for event 305939343
+2025-02-16 03:11:42,583 - Login successful.
+2025-02-16 03:11:42,586 - Attempting RSVP for event: https://www.meetup.com/mumbai-weekend-events/events/305939343/
+2025-02-16 03:12:06,355 - RSVP failed for event 305939343
+2025-02-16 03:22:55,064 - Login successful.
+2025-02-16 03:22:55,067 - Attempting RSVP for event: https://www.meetup.com/mumbai-weekend-events/events/305939343/
+2025-02-16 03:23:18,706 - RSVP failed for event 305939343
+2025-02-16 03:23:33,969 - Login successful.
+2025-02-16 03:23:33,970 - Attempting RSVP for event: https://www.meetup.com/mumbai-weekend-events/events/305939343/
+2025-02-16 03:23:58,214 - Failed to RSVP for event 305939343: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=133.0.6943.53)
+Stacktrace:
+#0 0xafd86dd85e4c <unknown>
+#1 0xafd86d8b669c <unknown>
+#2 0xafd86d89f078 <unknown>
+#3 0xafd86d8c2efc <unknown>
+#4 0xafd86d925b20 <unknown>
+#5 0xafd86d93e990 <unknown>
+#6 0xafd86d8f1198 <unknown>
+#7 0xafd86dd543dc <unknown>
+#8 0xafd86dd5788c <unknown>
+#9 0xafd86dd437f4 <unknown>
+#10 0xafd86dd57f08 <unknown>
+#11 0xafd86dd2b674 <unknown>
+#12 0xafd86dd7516c <unknown>
+#13 0xafd86dd7533c <unknown>
+#14 0xafd86dd84c44 <unknown>
+#15 0xf7730c26d5c4 <unknown>
+#16 0xf7730c2d5ed8 <unknown>
+
+2025-02-16 03:24:29,213 - Login successful.
+2025-02-16 03:24:34,226 - Attempting RSVP for event: https://www.meetup.com/mumbai-weekend-events/events/305939343/
+2025-02-16 03:24:58,235 - RSVP failed for event 305939343
+2025-02-16 03:28:08,420 - Login successful.
+2025-02-16 03:28:13,432 - Attempting RSVP for event: https://www.meetup.com/mumbai-weekend-events/events/305939343/
+2025-02-16 03:28:42,814 - Login successful.
+2025-02-16 03:28:47,826 - Attempting RSVP for event: https://www.meetup.com/mumbai-weekend-events/events/305939343/
+2025-02-16 03:28:50,795 - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))': /session/7c23a21e26e586f1fde86705f48066f0/element/f.24FB8B0499FA4EDF2B6D5AD07BBD293E.d.4FF7D94A642BA217376BACBDD55130B5.e.52/text
+2025-02-16 03:28:50,797 - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0xe52663ea5d50>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/7c23a21e26e586f1fde86705f48066f0/element/f.24FB8B0499FA4EDF2B6D5AD07BBD293E.d.4FF7D94A642BA217376BACBDD55130B5.e.52/text
+2025-02-16 03:28:50,798 - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0xe52663ea59f0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/7c23a21e26e586f1fde86705f48066f0/element/f.24FB8B0499FA4EDF2B6D5AD07BBD293E.d.4FF7D94A642BA217376BACBDD55130B5.e.52/text
+2025-02-16 03:28:50,798 - Failed to RSVP for event 305939343: HTTPConnectionPool(host='localhost', port=50809): Max retries exceeded with url: /session/7c23a21e26e586f1fde86705f48066f0/element/f.24FB8B0499FA4EDF2B6D5AD07BBD293E.d.4FF7D94A642BA217376BACBDD55130B5.e.52/text (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xe52663ea5fc0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-02-16 03:28:50,801 - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0xe52663ea60e0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/7c23a21e26e586f1fde86705f48066f0
+2025-02-16 03:28:50,802 - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0xe52663ea6230>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/7c23a21e26e586f1fde86705f48066f0
+2025-02-16 03:28:50,802 - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0xe52663ea6380>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/7c23a21e26e586f1fde86705f48066f0
+2025-02-16 03:32:33,075 - Login successful.
+2025-02-16 03:32:38,099 - Attempting RSVP for event: https://www.meetup.com/mumbai-weekend-events/events/305939343/
+2025-02-16 03:33:01,980 - RSVP failed for event 305939343
+2025-02-16 03:36:07,446 - Login successful.
+2025-02-16 03:36:12,459 - Attempting RSVP for event: https://www.meetup.com/mumbai-weekend-events/events/305939343/
+2025-02-16 03:36:44,800 - RSVP failed for event 305939343
