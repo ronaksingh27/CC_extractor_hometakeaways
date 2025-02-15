@@ -1,20 +1,22 @@
 import os
-import time
 import logging
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 # Load environment variables
 load_dotenv()
-
 EMAIL = os.getenv("MEETUP_EMAIL")
 PASSWORD = os.getenv("MEETUP_PASSWORD")
 
-GROUPS_FILE = "config/groups.txt"  # Updated path for event IDs
-LOG_FILE = "logs/rsvp_log.txt"  # Log file path
+# Configuration paths
+GROUPS_FILE = "config/groups.txt"
+LOG_FILE = "logs/rsvp_log.txt"
 
 # Set up logging
 os.makedirs("logs", exist_ok=True)
@@ -23,7 +25,7 @@ logging.basicConfig(filename=LOG_FILE, level=logging.INFO, format="%(asctime)s -
 def setup_driver():
     """Initialize Selenium WebDriver for ARM-based Ubuntu"""
     print("[INFO] Setting up the Chrome WebDriver...")
-    
+
     options = Options()
     options.binary_location = "/usr/bin/chromium-browser"  # Ensure correct Chromium path
     options.add_argument("--no-sandbox")
@@ -37,26 +39,38 @@ def setup_driver():
     return driver
 
 def login(driver):
-    """Logs into Meetup using credentials from the .env file"""
+    """Logs into Meetup using credentials from .env file"""
     print("[INFO] Navigating to Meetup login page...")
 
     driver.get("https://www.meetup.com/login/")
-    time.sleep(2)
+    wait = WebDriverWait(driver, 10)
 
-    print("[INFO] Entering login credentials...")
-    email_input = driver.find_element(By.ID, "email")
-    password_input = driver.find_element(By.ID, "password")
-    login_button = driver.find_element(By.XPATH, "//button[contains(text(),'Log in')]")
+    try:
+        # Locate and enter email
+        email_input = wait.until(EC.presence_of_element_located((By.ID, "email")))
+        email_input.send_keys(EMAIL)
 
-    email_input.send_keys(EMAIL)
-    password_input.send_keys(PASSWORD)
-    login_button.click()
+        # Locate and enter password
+        password_input = wait.until(EC.presence_of_element_located((By.ID, "current-password")))
+        password_input.send_keys(PASSWORD)
 
-    time.sleep(5)  # Wait for login
-    print("[SUCCESS] Logged in successfully!")
+        # Click the login button
+        login_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Log in')]")))
+        login_button.click()
+
+        # Wait for login success by checking redirected URL
+        # wait.until(EC.url_contains("/home"))
+
+        print("[SUCCESS] Logged in successfully!")
+        logging.info("Login successful.")
+    except Exception as e:
+        print(f"[ERROR] Login failed: {e}")
+        logging.error(f"Login failed: {e}")
+        driver.quit()
+        exit()
 
 def load_group_events():
-    """Reads event IDs from config/groups.txt"""
+    """Reads event IDs from groups.txt"""
     print(f"[INFO] Loading event IDs from {GROUPS_FILE}...")
 
     if not os.path.exists(GROUPS_FILE):
@@ -71,23 +85,40 @@ def load_group_events():
     return event_ids
 
 def rsvp_to_event(driver, event_id):
-    """RSVPs to an event using its event ID"""
+    """RSVPs to an event using its event ID with debug logging"""
     event_url = f"https://www.meetup.com/hsrmeetups/events/{event_id}/"
     print(f"[INFO] Attempting RSVP for event: {event_url}")
     logging.info(f"Attempting RSVP for event: {event_url}")
 
     driver.get(event_url)
-    time.sleep(3)
+    wait = WebDriverWait(driver, 15)  # Increased wait time for slow loading
 
     try:
-        rsvp_button = driver.find_element(By.XPATH, "//button[contains(text(),'Attend')]")
+        print("[DEBUG] Waiting for the RSVP button to be present on the page...")
+        rsvp_button = wait.until(EC.presence_of_element_located(
+            (By.XPATH, "/html/body/div[1]/div[2]/div[2]/div[2]/div/main/div[4]/div/div/div[2]/div/div[2]/button")
+        ))
+        print("[DEBUG] RSVP button found on the page!")
+
+        print("[DEBUG] Scrolling to the RSVP button to make sure it's visible...")
+        driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", rsvp_button)
+        print("[DEBUG] Scrolling complete.")
+
+        print("[DEBUG] Waiting for the RSVP button to become clickable...")
+        wait.until(EC.element_to_be_clickable(
+            (By.XPATH, "/html/body/div[1]/div[2]/div[2]/div[2]/div/main/div[4]/div/div/div[2]/div/div[2]/button")
+        ))
+        print("[DEBUG] RSVP button is now clickable!")
+
+        print("[DEBUG] Clicking the RSVP button...")
         rsvp_button.click()
         print(f"[SUCCESS] Successfully RSVP’d to event {event_id}!")
         logging.info(f"Successfully RSVP’d to event {event_id}")
-        time.sleep(2)
+
     except Exception as e:
         print(f"[ERROR] Failed to RSVP for event {event_id}: {e}")
         logging.error(f"Failed to RSVP for event {event_id}: {e}")
+
 
 def run_bot():
     """Main function to run the Meetup auto-RSVP bot"""

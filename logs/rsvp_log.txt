@@ -24,3 +24,104 @@ Stacktrace:
 #19 0xfc0bf1a25ed8 <unknown>
 
 2025-02-16 01:15:57,145 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305824270/
+2025-02-16 01:34:12,144 - Login failed: Message: 
+
+2025-02-16 01:38:06,612 - Login failed: Message: 
+
+2025-02-16 01:40:42,544 - Login failed: Message: 
+
+2025-02-16 01:51:44,021 - Login failed: Message: 
+
+2025-02-16 01:52:10,954 - Login successful.
+2025-02-16 01:52:10,956 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305824270/
+2025-02-16 01:52:14,287 - Failed to RSVP for event 305824270: Message: element click intercepted: Element <button id="attend-event-btn-305841514" data-event-label="attend-event-btn" data-event-category="GroupHome" class="h-11 b9jvzp4">...</button> is not clickable at point (256, 419). Other element would receive the click: <div class="hidden flex-col justify-center sm:flex">...</div>
+  (Session info: chrome=133.0.6943.53)
+Stacktrace:
+#0 0xac1e41365e4c <unknown>
+#1 0xac1e40e9669c <unknown>
+#2 0xac1e40ee340c <unknown>
+#3 0xac1e40ee1974 <unknown>
+#4 0xac1e40edf73c <unknown>
+#5 0xac1e40edeb08 <unknown>
+#6 0xac1e40ed3410 <unknown>
+#7 0xac1e40ed2e88 <unknown>
+#8 0xac1e40f1ee80 <unknown>
+#9 0xac1e40ed1198 <unknown>
+#10 0xac1e413343dc <unknown>
+#11 0xac1e4133788c <unknown>
+#12 0xac1e413237f4 <unknown>
+#13 0xac1e41337f08 <unknown>
+#14 0xac1e4130b674 <unknown>
+#15 0xac1e4135516c <unknown>
+#16 0xac1e4135533c <unknown>
+#17 0xac1e41364c44 <unknown>
+#18 0xe954d4d9d5c4 <unknown>
+#19 0xe954d4e05ed8 <unknown>
+
+2025-02-16 01:55:57,331 - Login successful.
+2025-02-16 01:55:57,335 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305824270/
+2025-02-16 01:57:55,146 - Failed to RSVP for event 305824270: name 'time' is not defined
+2025-02-16 02:00:20,923 - Login successful.
+2025-02-16 02:00:20,926 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305824270/
+2025-02-16 02:00:22,755 - Successfully RSVP’d to event 305824270
+2025-02-16 02:08:48,411 - Login successful.
+2025-02-16 02:08:48,414 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305824270/
+2025-02-16 02:08:53,004 - Successfully RSVP’d to event 305824270
+2025-02-16 02:12:14,057 - Login successful.
+2025-02-16 02:12:14,067 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305824270/
+2025-02-16 02:12:33,536 - Failed to RSVP for event 305824270: Message: 
+Stacktrace:
+#0 0xb22acd575e4c <unknown>
+#1 0xb22acd0a669c <unknown>
+#2 0xb22acd0ed8ac <unknown>
+#3 0xb22acd12ee80 <unknown>
+#4 0xb22acd0e1198 <unknown>
+#5 0xb22acd5443dc <unknown>
+#6 0xb22acd54788c <unknown>
+#7 0xb22acd5337f4 <unknown>
+#8 0xb22acd547f08 <unknown>
+#9 0xb22acd51b674 <unknown>
+#10 0xb22acd56516c <unknown>
+#11 0xb22acd56533c <unknown>
+#12 0xb22acd574c44 <unknown>
+#13 0xeffd4397d5c4 <unknown>
+#14 0xeffd439e5ed8 <unknown>
+
+2025-02-16 02:16:56,712 - Login successful.
+2025-02-16 02:16:56,713 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305824270/
+2025-02-16 02:17:17,488 - Successfully RSVP’d to event 305824270
+2025-02-16 02:17:17,490 - Failed to RSVP for event 305824270: local variable 'submit_button' referenced before assignment
+2025-02-16 02:19:41,260 - Login successful.
+2025-02-16 02:19:41,262 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305824270/
+2025-02-16 02:21:11,670 - Successfully RSVP’d to event 305824270
+2025-02-16 02:22:22,530 - Login successful.
+2025-02-16 02:22:22,538 - Navigating to event page: https://www.meetup.com/hsrmeetups/events/305824270/
+2025-02-16 02:22:25,498 - Failed to RSVP for event 305824270: Message: element click intercepted: Element <a class="flex items-center xs:text-viridian gfb3h5t LinkButton_link__B3JFF Button_btn__fN8OU Button_btn-secondary__dX6MU" id="start-new-group-link" href="https://www.meetup.com/how-to-group-start/" data-element-name="header-startGroup" data-event-label="Group discount">...</a> is not clickable at point (335, 21). Other element would receive the click: <div aria-live="polite" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="pl-0 pr-0 sm:pl-10 sm:pr-10 a27i9ef hidden relative sm:block bg-white rounded-lg shadow-lg  z-50 max-h-screen overflow-y-auto pl-12 pr-10 pt-9 pb-8 md:max-w-prose mcm12el" style="opacity: 1; transform: none;">...</div>
+  (Session info: chrome=133.0.6943.53)
+Stacktrace:
+#0 0xb29bb86e5e4c <unknown>
+#1 0xb29bb821669c <unknown>
+#2 0xb29bb826340c <unknown>
+#3 0xb29bb8261974 <unknown>
+#4 0xb29bb825f73c <unknown>
+#5 0xb29bb825eb08 <unknown>
+#6 0xb29bb8253410 <unknown>
+#7 0xb29bb8252e88 <unknown>
+#8 0xb29bb829ee80 <unknown>
+#9 0xb29bb8251198 <unknown>
+#10 0xb29bb86b43dc <unknown>
+#11 0xb29bb86b788c <unknown>
+#12 0xb29bb86a37f4 <unknown>
+#13 0xb29bb86b7f08 <unknown>
+#14 0xb29bb868b674 <unknown>
+#15 0xb29bb86d516c <unknown>
+#16 0xb29bb86d533c <unknown>
+#17 0xb29bb86e4c44 <unknown>
+#18 0xe5841bc5d5c4 <unknown>
+#19 0xe5841bcc5ed8 <unknown>
+
+2025-02-16 02:23:33,867 - Login successful.
+2025-02-16 02:23:33,868 - Navigating to event page: https://www.meetup.com/hsrmeetups/events/305824270/
+2025-02-16 02:30:46,043 - Login successful.
+2025-02-16 02:30:46,045 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305824270/
+2025-02-16 02:30:47,353 - Successfully RSVP’d to event 305824270
