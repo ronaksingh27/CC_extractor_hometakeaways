@@ -1,0 +1,26 @@
+2025-02-16 01:05:03,383 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305824270/
+2025-02-16 01:05:08,688 - Failed to RSVP for event 305824270: Message: element click intercepted: Element <button id="attend-event-btn-305755713" data-event-label="attend-event-btn" data-event-category="GroupHome" class="h-11 b9jvzp4">...</button> is not clickable at point (256, 419). Other element would receive the click: <div class="hidden flex-col justify-center sm:flex">...</div>
+  (Session info: chrome=133.0.6943.53)
+Stacktrace:
+#0 0xaf46a09f5e4c <unknown>
+#1 0xaf46a052669c <unknown>
+#2 0xaf46a057340c <unknown>
+#3 0xaf46a0571974 <unknown>
+#4 0xaf46a056f73c <unknown>
+#5 0xaf46a056eb08 <unknown>
+#6 0xaf46a0563410 <unknown>
+#7 0xaf46a0562e88 <unknown>
+#8 0xaf46a05aee80 <unknown>
+#9 0xaf46a0561198 <unknown>
+#10 0xaf46a09c43dc <unknown>
+#11 0xaf46a09c788c <unknown>
+#12 0xaf46a09b37f4 <unknown>
+#13 0xaf46a09c7f08 <unknown>
+#14 0xaf46a099b674 <unknown>
+#15 0xaf46a09e516c <unknown>
+#16 0xaf46a09e533c <unknown>
+#17 0xaf46a09f4c44 <unknown>
+#18 0xfc0bf19bd5c4 <unknown>
+#19 0xfc0bf1a25ed8 <unknown>
+
+2025-02-16 01:15:57,145 - Attempting RSVP for event: https://www.meetup.com/hsrmeetups/events/305824270/
