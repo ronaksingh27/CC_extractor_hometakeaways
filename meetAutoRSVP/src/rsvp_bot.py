@@ -170,7 +170,7 @@ def rsvp_to_event(driver, event_id):
 
         print("[DEBUG] Attempting to click the RSVP button...")
         try:
-            #rsvp_button.click()
+            rsvp_button.click()
             
             # print("[SUCCESS] RSVP button clicked successfully!")
             print("[DEBUG] Clicking Attend button via JavaScript...")
