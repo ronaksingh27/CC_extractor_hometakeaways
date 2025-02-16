@@ -2,8 +2,6 @@ import requests
 import json
 import time
 from bs4 import BeautifulSoup
-from lxml import html
-import re
 import json
 
 # Configuration
@@ -35,6 +33,8 @@ HEADERS = {
 }
 
 session = requests.Session()
+
+
 
 def login():
     """Logs in to Meetup.com"""
@@ -69,101 +69,8 @@ def login():
     return login_response.status_code == 200
 
 
-def find_events(group):
-    """Finds upcoming events for a specific group."""
-    print(f"Searching events for group: {group}")
-    url = f"{BASE_URL}{group}/events/"
+def rsvp_event():
 
-    print("url: ",url)
-    
-     # Retry mechanism for handling failed requests
-    max_retries = 5
-    for attempt in range(max_retries):
-        try:
-            response = session.get(url, headers=HEADERS, timeout=10)
-            if response.status_code == 200 and len(response.text) > 100000:
-                print("response text length , ",len(response.text))
-                # print(response.text)
-                print("breaking the loop , status code 200")
-                break  # Successful response, exit loop
-            else:
-                print(f"Attempt {attempt + 1}: Received status code {response.status_code}")
-        except requests.exceptions.RequestException as e:
-            print(f"Attempt {attempt + 1}: Request failed - {e}")
-        
-        time.sleep(10)  # Wait before retrying
-    else:
-        print("Failed to fetch events after multiple attempts.")
-        return []
-
-
-    soup = BeautifulSoup(response.text, "html.parser")
-    events = []
-
-
-    # print(soup)
-    # print("response : ",response)
-    time.sleep(10)
-    # print(soup.find_all("a",href=True))
-    
-    for link in soup.find_all("a", href=True):
-        if "/events/" in link["href"]:
-            events.append(link["href"])
-    
-    print(f"Found {len(events)} events for group: {group}")
-    return events
-
-
-
-def extract_event_venue_ids(page_html):
-    """Extracts eventId and venueId from the event page."""
-    """Extracts eventId from the event page using XPath."""
-    try:
-        # Parse the HTML using lxml
-        tree = html.fromstring(page_html)
-        
-        # Extract the text from the second script tag
-        script_content = tree.xpath('/html/body/script[2]/text()')
-        print(script_content)
-
-        if not script_content:
-            print("No script tag found at the given XPath.")
-            return None
-        
-        script_text = script_content[0]
-
-        # Parse JSON inside the script tag
-        json_data = json.loads(script_text)
-
-        # Extract eventId
-        event_id = json_data.get("props", {}).get("pageProps", {}).get("event", {}).get("id")
-
-        #venue id
-        venue_id = json_data.get("props", {}).get("pageProps", {}).get("event", {}).get("venue", {}).get("id")
-
-
-        print(f"Extracted Event ID: {event_id}")
-        print(f"Extracted Venue id {venue_id}")
-        return event_id,venue_id
-    except Exception as e:
-        print(f"Error extracting eventId: {e}")
-        return None,None
-
-
-    
-
-def rsvp_event(event_url):
-    """RSVPs to a given event."""
-    print(f"Attempting to RSVP for event: {event_url}")
-    response = session.get(event_url, headers=HEADERS)
-    print(event_url)
-
-    soup = BeautifulSoup(response.text, "html.parser")
-    # print("response ",response.text)
-
-    event_id,venue_id, = extract_event_venue_ids(response.text)
-    
-    
 
     payload = {
         "operationName": "rsvpToEvent",
@@ -175,10 +82,10 @@ def rsvp_event(event_url):
         },
         "variables": {
             "input": {
-            "eventId": event_id,
+            "eventId": "305939343",
             "response": "YES",
             "proEmailShareOptin": False,
-            "venueId": venue_id,
+            "venueId": "27533193",
             "eventPromotionId": "0"
             }
         }
@@ -195,18 +102,7 @@ def rsvp_event(event_url):
 
 
 
-    return rsvp_response.status_code == 200
-    
-
-
-
 if __name__ == "__main__":
-    if login():
-        for group in GROUPS:
-            events = find_events(group)
-            for event in events:
-                if rsvp_event(event):
-                    print(f"Successfully RSVP'd to {event}")
-                time.sleep(5)  # Avoid rate limiting
-    else:
-        print("Login failed.")
+    login()
+    rsvp_event()
+
