@@ -41,8 +41,10 @@ def fetch_rehydration_data():
     url = "https://www.linkedin.com/mynetwork/"
     response = session.get(url, timeout=10)
 
-    if len(response.text) < 400000:
+    tries = 10
+    while len(response.text) < 400000 and tries > 0:
         response = session.get(url, timeout=10)
+        tries = tries - 1
 
     soup = BeautifulSoup(response.text, "html.parser")
     script_tag = soup.find("script", {"id": "rehydrate-data"})
@@ -203,7 +205,9 @@ def send_connection_requests():
             print(f"Retry Response Code: {response.status_code}")
             print(f"Retry Response: {response.text}\n{'-'*50}")
 
-        sent_names.add(first_name)
+        if '"message":"Failed to create connection"}]},"states":[]}' not in response.text:
+            sent_names.add(payload.get('serverRequest', {}).get('requestedArguments', {}).get('payload', {}).get('firstName', 'Unknown'))
+
 
     return sent_names
 
@@ -217,4 +221,4 @@ if __name__ == "__main__":
         all_names.update(send_connection_requests())
 
     print(f"✅ Total unique names processed: {len(all_names)}")
-    print(f"Names: {all_names}")
+    print(f"Request sent to : {all_names}")
